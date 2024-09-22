@@ -3,11 +3,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1280px; /* Ensure the navbar aligns with the root container */
-    padding: 10px 20px;
+    width: 100vw; /* Ensure the navbar aligns with the root container */
+    padding: 30px 90px;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
-  
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;/* Ensure it stays on top of other elements */
+  }
   
   .navbar-item{
     color: white;
