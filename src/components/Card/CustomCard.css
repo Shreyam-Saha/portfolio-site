@@ -1,0 +1,22 @@
+.ant-card-cover{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+
+
+.card-img{
+    height: 150px;
+    width: 150px;
+}
+
+.custom-card-container{
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+    border-radius: 8px;
+}
+
+.custom-card-container:hover{
+    box-shadow: 0 0 10px rgba(248, 246, 247, 0.8), 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
