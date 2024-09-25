@@ -1,0 +1,16 @@
+.custom-dot {
+  background-color: transparent;
+  color: white;
+}
+
+ul li {
+  margin-bottom: 10px; /* Adjust the value as needed */
+}
+
+.timeline-wrapper .label-h3 {
+  margin-top: -3px;
+}
+
+.timeline-wrapper .ant-timeline {
+  padding-right: 175px;
+}

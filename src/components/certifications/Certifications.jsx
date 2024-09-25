@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Row, Col } from "antd";
-import CustomCard from "../Card/CustomCard";
+import CustomCard from "../custom-card/CustomCard";
 import "./Certifications.css";
 import certificationCardData from "../../constants/certification";
 
