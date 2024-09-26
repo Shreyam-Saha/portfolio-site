@@ -1,30 +1,99 @@
-.svg-container {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  text-align: center;
+.contact-container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: 45%;
 }
 
-.svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 500px;
   width: 100%;
-  height: 100%;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 24px;
+}
+.contact-title {
+  margin: 30px;
+  width: 100%;
 }
 
-.first-svg {
-  opacity: 1;
-}
-
-.second-svg {
-  opacity: 1;
-}
-
-h2 {
+.contact-form-label {
   color: white;
-  margin-top: 320px;
+}
+
+.loading-spin {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.ant-input,
+.ant-input-textarea {
+  height: 45px;
+  border-radius: 4px;
+  transition: border 0.3s ease-in-out;
+  background-color: #242424;
+  color: #ffffff;
+}
+
+.ant-message-success {
+  background-color: #242424; /* New background color */
+  color: white; /* Text color */
+}
+.ant-message .ant-message-notice-wrapper .ant-message-notice-content {
+  background-color: #242424;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ant-input:focus,
+.ant-input:hover,
+.ant-input-textarea:focus,
+.ant-input-textarea:hover {
+  background-color: #242424; /* Keep the same background color */
+  /* Change border color on focus */
+  box-shadow: 0 0 8px rgba(24, 144, 255, 0.2); /* Add a soft shadow */
+}
+
+.ant-btn-primary {
+  width: 100%;
+  height: 45px;
+  background: #1890ff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease-in-out;
+}
+
+.ant-btn-primary:hover {
+  background: #40a9ff;
+}
+
+.ant-form-item .ant-form-item-label > label {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ant-form-item-required {
+  color: #ffffff;
+}
+.ant-input::placeholder,
+.ant-input-textarea::placeholder {
+  background-color: transparent;
+  color: #ffffff; /* Change placeholder color to white */
+  opacity: 1; /* Override default opacity */
+}
+
+.ant-input:focus::placeholder,
+.ant-input-textarea:focus::placeholder {
+  color: #fff;
+}
+
+.ant-spin-nested-loading {
+  width: 100%;
 }

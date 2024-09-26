@@ -1,34 +1,101 @@
-import { useEffect, useState } from "react";
-import developingFirstLogo from "../../assets/developing-first.svg";
-import developingSecondLogo from "../../assets/developing-second.svg";
+import { useState } from "react";
+import { Form, Input, Button, message, Spin } from "antd";
+const { TextArea } = Input;
 import "./Contact.css";
+
 function Contact() {
-  const [showFirst, setShowFirst] = useState(true); // Toggle between the two SVGs
+  const [form] = Form.useForm();
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    // Toggle the state between the two SVGs every 2 seconds (2000 ms)
-    const intervalId = setInterval(() => {
-      setShowFirst((prev) => !prev);
-    }, 5000);
+  const handleSubmit = (values) => {
+    setLoading(true); // Show spinner
+    setTimeout(() => {
+      setLoading(false); // Hide spinner after 3 seconds
+      message.success({
+        content: "Your message has been sent successfully!",
+        duration: 5,
+      });
+      console.log(values); // Show success message
+      form.resetFields(); // Reset form fields
+    }, 3000);
+  };
 
-    // Clean up the interval on component unmount
-    return () => clearInterval(intervalId);
-  }, []);
+  const handleFocus = (e) => {
+    e.target.setAttribute("data-placeholder", e.target.placeholder);
+    e.target.placeholder = ""; // Clear placeholder
+  };
 
+  const handleBlur = (e) => {
+    e.target.placeholder = e.target.getAttribute("data-placeholder"); // Restore placeholder
+  };
   return (
-    <div className="svg-container">
-      <img
-        className={`svg ${showFirst ? "first-svg" : ""}`}
-        src={developingFirstLogo}
-        alt="First SVG"
-      />
-      <img
-        className={`svg ${!showFirst ? "second-svg" : ""}`}
-        src={developingSecondLogo}
-        alt="Second SVG"
-      />
+    <div className="contact-container">
+      <h2 className="contact-title">Contact Me</h2>
 
-      <h2>Work in Progress</h2>
+      {loading ? (
+        <div className="contact-form">
+          <Spin
+            className="loading-spin"
+            spinning={loading}
+            tip="Submitting..."
+          />
+        </div>
+      ) : (
+        <Form
+          className="contact-form"
+          form={form}
+          layout="vertical"
+          onFinish={handleSubmit}
+          initialValues={{ name: "", email: "", message: "" }}
+        >
+          <Form.Item
+            className="contact-form-label"
+            label="Name"
+            name="name"
+            rules={[{ required: true, message: "Please enter your name!" }]}
+          >
+            <Input
+              placeholder="Enter your name"
+              onFocus={handleFocus} // Remove placeholder on focus
+              onBlur={handleBlur} // Restore placeholder on blur
+            />
+          </Form.Item>
+
+          <Form.Item
+            label="Email"
+            name="email"
+            rules={[
+              { required: true, message: "Please enter your email!" },
+              { type: "email", message: "Please enter a valid email!" },
+            ]}
+          >
+            <Input
+              placeholder="Enter your email"
+              onFocus={handleFocus} // Remove placeholder on focus
+              onBlur={handleBlur} // Restore placeholder on blur
+            />
+          </Form.Item>
+
+          <Form.Item
+            label="Message"
+            name="message"
+            rules={[{ required: true, message: "Please enter your message!" }]}
+          >
+            <TextArea
+              rows={4}
+              placeholder="Enter your message"
+              onFocus={handleFocus} // Remove placeholder on focus
+              onBlur={handleBlur} // Restore placeholder on blur
+            />
+          </Form.Item>
+
+          <Form.Item>
+            <Button type="primary" htmlType="submit" disabled={loading}>
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      )}
     </div>
   );
 }
