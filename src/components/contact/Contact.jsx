@@ -42,6 +42,7 @@ function Contact() {
         </div>
       ) : (
         <Form
+          size="large"
           className="contact-form"
           form={form}
           layout="vertical"
