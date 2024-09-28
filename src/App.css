@@ -1,9 +1,37 @@
+/* App.css */
 #root {
+  padding-top: 80px; /* Add top padding to prevent content overlap */
   padding: 2rem;
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 80px); /* Reduce height to account for navbar */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Adjust body styles (optional, as you already defined these elsewhere) */
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}

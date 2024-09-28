@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Form, Input, Button, message, Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 const { TextArea } = Input;
 import "./Contact.css";
 
@@ -35,6 +36,7 @@ function Contact() {
       {loading ? (
         <div className="contact-form">
           <Spin
+            indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />}
             className="loading-spin"
             spinning={loading}
             tip="Submitting..."
