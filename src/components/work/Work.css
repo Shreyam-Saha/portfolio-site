@@ -12,5 +12,5 @@ ul li {
 }
 
 .timeline-wrapper .ant-timeline {
-  padding-right: 175px;
+  width: 100%;
 }

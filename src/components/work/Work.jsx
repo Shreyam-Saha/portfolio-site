@@ -10,12 +10,11 @@ function Work() {
           paddingright: "170px",
           color: "white",
           minWidth: "150px",
-          width: "1200px",
           height: "600px",
-          margin: "0 auto",
+          marginLeft: "-150px",
           textAlign: "justify",
         }}
-        pending={<h3>Career Updating . .</h3>}
+        pending={<h3>Looking for Opportunities . .</h3>}
         reverse
         mode="left"
         items={[
