@@ -49,7 +49,7 @@ function Navbar() {
           title="Navigation"
           placement="right"
           onClose={onClose}
-          visible={visible}
+          open={visible}
         >
           <Link className="drawer-item" to="/" onClick={onClose}>
             Home

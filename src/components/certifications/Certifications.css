@@ -1,4 +1,10 @@
-.site-card-wrapper{
-    max-width: 1200px;
-    margin: 0 auto;
+.site-card-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .site-card-wrapper {
+    margin-top: 700px;
+  }
 }
