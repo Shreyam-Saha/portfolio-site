@@ -1,7 +1,6 @@
 /* App.css */
 #root {
-  padding-top: 80px; /* Add top padding to prevent content overlap */
-  padding: 2rem;
+  padding: 80px 2rem 2rem 2rem; /* Top padding to prevent navbar overlap */
   text-align: center;
   height: calc(100vh - 80px); /* Reduce height to account for navbar */
   display: flex;

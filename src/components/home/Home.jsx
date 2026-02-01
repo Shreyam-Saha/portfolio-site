@@ -10,7 +10,7 @@ function Home() {
       <div>
         <img
           src={profileImage}
-          alt="Description of image"
+          alt="Shreyam Saha - Software Developer"
           className="circular-image"
         />
       </div>
@@ -30,6 +30,7 @@ function Home() {
           data-tooltip-content="Twitter"
           href="https://x.com/coder_panda_"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={twitterLogo} className="icon" alt="Twitter Logo" />
         </a>
@@ -39,6 +40,7 @@ function Home() {
           data-tooltip-content="LinkedIn"
           href="https://www.linkedin.com/in/shreyam-saha/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={linkedinLogo} className="icon" alt="LinkedIn Logo" />
         </a>
@@ -48,6 +50,7 @@ function Home() {
           data-tooltip-content="Github"
           href="https://github.com/Shreyam-Saha"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={githubLogo} className="icon" alt="Github Logo" />
         </a>

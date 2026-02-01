@@ -1,13 +1,11 @@
-//import developingLogo from '../../assets/developing.svg'
 import { Timeline } from "antd";
-//import collegeSvg from "../../assets/college.svg";
 import "./Work.css";
 function Work() {
   return (
     <div className="timeline-wrapper">
       <Timeline
         style={{
-          paddingright: "170px",
+          paddingRight: "170px",
           color: "white",
           minWidth: "150px",
           height: "600px",

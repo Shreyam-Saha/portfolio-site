@@ -9,15 +9,17 @@ function Contact() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (values) => {
-    setLoading(true); // Show spinner
+    setLoading(true);
+    // TODO: Integrate with backend API (e.g., Formspree, EmailJS, or Vercel Serverless Function)
+    // For now, this is a mock submission
     setTimeout(() => {
-      setLoading(false); // Hide spinner after 3 seconds
+      setLoading(false);
       message.success({
         content: "Your message has been sent successfully!",
         duration: 5,
       });
-      console.log(values); // Show success message
-      form.resetFields(); // Reset form fields
+      console.log("Form data:", values);
+      form.resetFields();
     }, 3000);
   };
 

@@ -10,9 +10,8 @@ import "./CustomCard.css";
 function CustomCard({ title, img, link, status, loading }) {
   const handleCardClick = (link) => {
     if (link) {
-      window.open(link, "_blank");
+      window.open(link, "_blank", "noopener,noreferrer");
     }
-    // Open the link in a new tab
   };
 
   return (

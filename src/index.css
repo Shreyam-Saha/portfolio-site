@@ -1,7 +1,7 @@
 /* Global or index.css */
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto Mono", "Google Sans Code", monospace, system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -29,6 +29,21 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   overflow-y: auto;
+}
+
+/* Font variations for different elements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Google Sans Code", "Roboto Mono", monospace;
+  font-weight: 600;
+}
+
+code, pre, kbd, samp {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+}
+
+p, span, div {
+  font-family: "Roboto Mono", monospace;
 }
 
 @media (prefers-color-scheme: light) {
