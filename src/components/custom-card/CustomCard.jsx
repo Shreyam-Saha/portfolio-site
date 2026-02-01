@@ -10,22 +10,21 @@ import "./CustomCard.css";
 function CustomCard({ title, img, link, status, loading }) {
   const handleCardClick = (link) => {
     if (link) {
-      window.open(link, "_blank");
+      window.open(link, "_blank", "noopener,noreferrer");
     }
-    // Open the link in a new tab
   };
 
   return (
     <div className="custom-card-container">
       <Card
-        loading={loading} // Show skeleton while loading
+        loading={loading}
         hoverable
         style={{
           width: "100%",
-          minWidth: 250,
-          backgroundColor: "#414244",
-          border: "1px solid #414244",
-          boxShadow: "0 8px 24px rgba(0, 0, 0, 0.3)",
+          height: "100%",
+          backgroundColor: "#2a2b2e",
+          border: "1px solid rgba(255, 255, 255, 0.08)",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
         }}
         cover={
           !loading && (

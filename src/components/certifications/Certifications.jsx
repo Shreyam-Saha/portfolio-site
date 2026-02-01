@@ -17,11 +17,9 @@ function Certifications() {
   }, []);
   return (
     <div className="site-card-wrapper">
-      <Row gutter={[50, 50]} justify="space-evenly">
-        {" "}
-        {/* gutter for spacing */}
+      <Row gutter={[32, 32]} justify="start">
         {certificationCardData.map((card, index) => (
-          <Col key={index} xs={24} sm={12} md={8} lg={8} xl={8}>
+          <Col key={index} xs={24} sm={12} md={12} lg={8} xl={8}>
             <CustomCard
               title={card.title}
               img={card.img}
