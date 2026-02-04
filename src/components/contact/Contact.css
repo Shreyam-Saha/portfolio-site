@@ -13,8 +13,10 @@
   justify-content: space-around;
   min-height: 500px;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-bg-elevated), var(--color-bg-secondary));
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 1px rgba(0, 217, 255, 0.3);
+  border-radius: 12px;
   padding: 24px;
 }
 .contact-title {
@@ -36,64 +38,71 @@
 .ant-input,
 .ant-input-textarea {
   height: 45px;
-  border-radius: 4px;
-  transition: border 0.3s ease-in-out;
-  background-color: #242424;
-  color: #ffffff;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--color-bg-primary);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  color: var(--color-text-primary);
 }
 
 .ant-message-success {
-  background-color: #242424; /* New background color */
-  color: white; /* Text color */
+  background: linear-gradient(135deg, var(--color-bg-elevated), var(--color-bg-secondary));
+  color: var(--color-text-primary);
+  border: 1px solid rgba(0, 255, 163, 0.3);
 }
 .ant-message .ant-message-notice-wrapper .ant-message-notice-content {
-  background-color: #242424;
-  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
-    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(135deg, var(--color-bg-elevated), var(--color-bg-secondary));
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+              0 0 1px rgba(0, 217, 255, 0.5);
 }
 
 .ant-input:focus,
 .ant-input:hover,
 .ant-input-textarea:focus,
 .ant-input-textarea:hover {
-  background-color: #242424; /* Keep the same background color */
-  /* Change border color on focus */
-  box-shadow: 0 0 8px rgba(24, 144, 255, 0.2); /* Add a soft shadow */
+  background-color: var(--color-bg-primary);
+  border-color: var(--color-accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
 }
 
 .ant-btn-primary {
   width: 100%;
-  height: 45px;
-  background: #1890ff;
+  height: 48px;
+  background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-pink));
   border: none;
   font-size: 16px;
   font-weight: 600;
-  transition: background 0.3s ease-in-out;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
 }
 
 .ant-btn-primary:hover {
-  background: #40a9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.4), 
+              0 4px 15px rgba(255, 107, 157, 0.2);
 }
 
 .ant-form-item .ant-form-item-label > label {
-  color: #fff;
+  color: var(--color-text-primary);
   font-size: 16px;
   font-weight: 500;
 }
 
 .ant-form-item-required {
-  color: #ffffff;
+  color: var(--color-accent-pink);
 }
 .ant-input::placeholder,
 .ant-input-textarea::placeholder {
   background-color: transparent;
-  color: #ffffff; /* Change placeholder color to white */
-  opacity: 1; /* Override default opacity */
+  color: var(--color-text-muted);
+  opacity: 1;
 }
 
 .ant-input:focus::placeholder,
 .ant-input-textarea:focus::placeholder {
-  color: #fff;
+  color: var(--color-text-secondary);
 }
 
 .ant-spin-nested-loading {
