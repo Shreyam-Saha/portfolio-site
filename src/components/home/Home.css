@@ -7,7 +7,7 @@
 }
 
 .profile-desc {
-  color: rgb(155, 156, 157);
+  color: var(--color-text-secondary);
   text-align: justify;
   font-size: 20px;
   line-height: 1.8;
@@ -21,24 +21,26 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  border: 4px solid rgba(100, 108, 255, 0.2);
+  border: 4px solid rgba(0, 217, 255, 0.3);
   margin-bottom: 16px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
 }
 
 .circular-image:hover {
-  box-shadow: 0 20px 40px rgba(100, 108, 255, 0.3), 
-              0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 50px rgba(0, 217, 255, 0.5), 
+              0 20px 40px rgba(255, 107, 157, 0.2);
   transform: translateY(-8px) scale(1.02);
-  border-color: rgba(100, 108, 255, 0.5);
+  border-color: rgba(0, 217, 255, 0.8);
 }
 
 .custom-tooltip {
   border-radius: 8px;
   padding: 10px 14px;
-  background-color: #333;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, var(--color-bg-elevated), var(--color-bg-secondary));
+  color: var(--color-text-primary);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   font-size: 14px;
 }
 
@@ -69,13 +71,12 @@
 }
 
 .social-links:hover {
-  background-color: rgba(100, 108, 255, 0.1);
-  filter: drop-shadow(0px 0px 12px #ffffffcc);
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(255, 107, 157, 0.1));
   transform: translateY(-4px);
 }
 
 .social-links:hover .icon {
-  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(100, 108, 255, 0.8));
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(0, 217, 255, 0.8));
 }
 
 /* Desktop - Extra Large */

@@ -22,9 +22,9 @@ function CustomCard({ title, img, link, status, loading }) {
         style={{
           width: "100%",
           height: "100%",
-          backgroundColor: "#2a2b2e",
-          border: "1px solid rgba(255, 255, 255, 0.08)",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+          background: "linear-gradient(135deg, #1a1f3a 0%, #151933 100%)",
+          border: "1px solid rgba(0, 217, 255, 0.15)",
+          boxShadow: "0 8px 24px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 217, 255, 0.2)",
         }}
         cover={
           !loading && (
