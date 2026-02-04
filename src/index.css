@@ -1,32 +1,58 @@
 /* Global or index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  /* Color Palette */
-  --color-bg-primary: #0a0e27;
-  --color-bg-secondary: #151933;
-  --color-bg-elevated: #1a1f3a;
+@layer base {
+  :root {
+    /* Shadcn Theme Variables */
+    --background: 222 47% 11%;
+    --foreground: 222 47% 91%;
+    --card: 222 47% 11%;
+    --card-foreground: 222 47% 91%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 222 47% 91%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 222 47% 91%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 195 100% 50%;
+    --radius: 0.5rem;
+    
+    /* Custom Color Palette */
+    --color-bg-primary: #0a0e27;
+    --color-bg-secondary: #151933;
+    --color-bg-elevated: #1a1f3a;
+    
+    --color-accent-cyan: #00d9ff;
+    --color-accent-pink: #ff6b9d;
+    --color-accent-mint: #00ffa3;
+    
+    --color-text-primary: #e8eaed;
+    --color-text-secondary: #a0a5b9;
+    --color-text-muted: #6b7280;
+  }
   
-  --color-accent-cyan: #00d9ff;
-  --color-accent-pink: #ff6b9d;
-  --color-accent-mint: #00ffa3;
+  * {
+    @apply border-border;
+  }
   
-  --color-text-primary: #e8eaed;
-  --color-text-secondary: #a0a5b9;
-  --color-text-muted: #6b7280;
-  
-  /* Font Settings */
-  font-family: "Roboto Mono", "Google Sans Code", monospace, system-ui, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: dark;
-  color: var(--color-text-primary);
-  background: linear-gradient(135deg, var(--color-bg-primary) 0%, #0d1129 100%);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Roboto Mono", "Google Sans Code", monospace, system-ui, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 a {
