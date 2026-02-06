@@ -1,72 +1,95 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
+import { Home, Briefcase, Award, FolderOpen, Mail, Menu, X } from "lucide-react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
-import { MenuOutlined } from "@ant-design/icons";
-import { Drawer, Button } from "antd";
 
 function Navbar() {
-  const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
-  const showDrawer = () => {
-    setVisible(true);
-  };
+  const navItems = [
+    { path: "/", label: "Home", icon: Home },
+    { path: "/projects", label: "Projects", icon: FolderOpen },
+    { path: "/certifications", label: "Certifications", icon: Award },
+    { path: "/work", label: "Work", icon: Briefcase },
+    { path: "/contact", label: "Contact", icon: Mail },
+  ];
 
-  const onClose = () => {
-    setVisible(false);
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="header">
       <nav className="navbar">
-        <div className="logo">👨‍💻✨</div>
+        {/* Logo */}
+        <Link to="/" className="logo">
+          <span className="logo-icon">💻</span>
+          <span className="logo-text">Portfolio</span>
+        </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Navigation */}
         <div className="navbar-items">
-          <Link className="navbar-item" to="/">
-            Home
-          </Link>
-          <Link className="navbar-item" to="/projects">
-            Projects
-          </Link>
-          <Link className="navbar-item" to="/certifications">
-            Certifications
-          </Link>
-          <Link className="navbar-item" to="/work">
-            Work
-          </Link>
-          <Link className="navbar-item" to="/contact">
-            Contact
-          </Link>
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`navbar-item ${isActive(item.path) ? "active" : ""}`}
+              >
+                <Icon className="nav-icon" />
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="mobile-menu-button">
-          <Button type="primary" icon={<MenuOutlined />} onClick={showDrawer} />
+        {/* Mobile Menu - Hidden on Desktop */}
+        <div className="mobile-menu-wrapper">
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="mobile-menu-button">
+                <Menu className="menu-icon" />
+              </Button>
+            </SheetTrigger>
+            
+            <SheetContent side="right" className="mobile-menu">
+              <SheetHeader>
+                <SheetTitle className="menu-title">
+                  <span className="menu-logo">💻</span>
+                  Navigation
+                </SheetTitle>
+              </SheetHeader>
+              
+              <Separator className="menu-separator" />
+              
+              <div className="mobile-nav-items">
+                {navItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className={`mobile-nav-item ${isActive(item.path) ? "active" : ""}`}
+                      onClick={() => setOpen(false)}
+                    >
+                      <Icon className="mobile-nav-icon" />
+                      <span>{item.label}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
-
-        {/* Mobile Drawer Menu */}
-        <Drawer
-          title="Navigation"
-          placement="right"
-          onClose={onClose}
-          open={visible}
-        >
-          <Link className="drawer-item" to="/" onClick={onClose}>
-            Home
-          </Link>
-          <Link className="drawer-item" to="/projects" onClick={onClose}>
-            Projects
-          </Link>
-          <Link className="drawer-item" to="/certifications" onClick={onClose}>
-            Certifications
-          </Link>
-          <Link className="drawer-item" to="/work" onClick={onClose}>
-            Work
-          </Link>
-          <Link className="drawer-item" to="/contact" onClick={onClose}>
-            Contact
-          </Link>
-        </Drawer>
       </nav>
     </header>
   );
