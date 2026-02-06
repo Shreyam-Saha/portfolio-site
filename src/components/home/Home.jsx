@@ -2,7 +2,7 @@ import profileImage from "../../assets/profile.jpg";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import "./Home.css";
 
 function Home() {
@@ -20,19 +20,19 @@ function Home() {
   const socialLinks = [
     {
       name: "GitHub",
-      icon: Github,
+      icon: SiGithub,
       url: "https://github.com/Shreyam-Saha",
       variant: "default"
     },
     {
       name: "LinkedIn",
-      icon: Linkedin,
+      icon: SiLinkedin,
       url: "https://www.linkedin.com/in/shreyam-saha/",
       variant: "default"
     },
     {
-      name: "Twitter",
-      icon: Twitter,
+      name: "X (Twitter)",
+      icon: SiX,
       url: "https://x.com/coder_panda_",
       variant: "default"
     }
