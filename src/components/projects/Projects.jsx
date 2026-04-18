@@ -13,6 +13,14 @@ function Projects() {
       technologies: ["React", "Recharts", "Tailwind CSS", "Kubernetes", "Node.js"],
       demo: "https://cluster-companion-ten.vercel.app/",
       featured: true
+    },
+    {
+      id: 2,
+      title: "Carwise",
+      description: "Enterprise-grade Kubernetes cluster monitoring dashboard with real-time metrics, multi-cluster support, and comprehensive health tracking. Features dark/light themes, resource utilization gauges, deployment monitoring, and deep-dive analytics across nodes, pods, and services.",
+      technologies: ["React", "Express JS", "Supabase", "Tailwind CSS"],
+      demo: "https://car-wise-shreyam-sahas-projects.vercel.app/",
+      featured: true
     }
   ];
 
@@ -20,9 +28,9 @@ function Projects() {
     <div className="projects-page-container">
       <div className="projects-content">
         <div className="projects-header">
-          <h1 className="projects-title">Featured Project</h1>
+          <h1 className="projects-title">Featured Projects</h1>
           <p className="projects-subtitle">
-            Showcasing my work in Kubernetes monitoring, cloud-native applications, and enterprise dashboard design
+            Showcasing my work in Kubernetes monitoring, cloud-native applications, and full-stack web development
           </p>
         </div>
 
